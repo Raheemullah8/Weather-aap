@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="search-box">
+            <input type="text" placeholder="Enter Your Location" id="input-id">
+            <button class="fa-solid fa-magnifying-glass" id="btn-id"></button>
+        </div>
+        </div>
+        <div class="location-not">
+            <h1>Sorry Location Not Found</h1>
+            <img src="./assets/404.png" alt="404">
+        </div>
+    
+    <div class="weather-body">
+        <img src="./assets/cloud.png" alt="weather-Image" id="weather-img">
+        <div class="weather-box">
+            <p class="temperature" id="temp">0 <sup>°C</sup></p>
+            <p class="description" id="description">sky</p>
+        </div>
+        <div class="weather-details">
+            <div class="humidity">
+                <i class="fa-solid fa-droplet"></i>
+                <div class="text">
+                    <span id="humidity">0%</span>
+                    <p>humidity</p>
+                </div>
+            </div>
+            <div class="windspeed">
+                <i class="fa-solid fa-wind"></i>
+                <div class="text">
+                    <span id="wind-speed">0Km/H</span>
+                    <p>windspeed</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./aap.js"></script>
+</body>
+</html>
