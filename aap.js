@@ -7,7 +7,9 @@ const humidity = document.getElementById("humidity");
 const windSpeed = document.getElementById("wind-speed");
 const loc_not_Found = document.querySelector('.location-not');
 const weatherBody = document.querySelector('.weather-body');
+const cityName = document.querySelector(".cityname");
 const showWeather = async (city) => {
+
   const api_key = `24513c6d7ec0f65b2dca6b7ff2afdf95`;
   const ulr = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}`;
   const weatherData = await fetch(`${ulr}`).then((response) => response.json())
@@ -19,10 +21,7 @@ const showWeather = async (city) => {
         loc_not_Found.style.display = "none";
         weatherBody.style.display = "flex";
     }
-    
-   
 
-  
   temp.innerHTML = `${Math.round(weatherData.main.temp - 273.15)}°C`;
   description.innerHTML = `${weatherData.weather[0].description}`;
   console.log(weatherData);
@@ -44,12 +43,20 @@ const showWeather = async (city) => {
     case "Snow":
       weatherImg.src = "./assets/snow.png";
       break;
+   
   }
 };
-
 search_btn.addEventListener("click", () => {
-  showWeather(getInput.value);
+  const city = getInput.value;
+  showWeather(city);
+  // Pehle cityname se pehla bacha hua element remove karen
+  while (cityName.firstChild) {
+    cityName.removeChild(cityName.firstChild);
+  }
+  cityName.append(city) // Phir naya sheher ka naam add karen
+  getInput.value = ""; // Input field ko saaf karen
 });
+
 getInput.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
     event.preventDefault();
