@@ -92,6 +92,13 @@ body {
     text-align: center;
     color: #e6f5fb;
 }
+.cityname{
+    padding: 10px 0px;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+
+}
 
 .weather-box .temperature {
     font-size: 40px;
